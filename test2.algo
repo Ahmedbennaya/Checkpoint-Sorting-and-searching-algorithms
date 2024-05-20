@@ -1,0 +1,25 @@
+FUNCTION insertionSort(arr)
+    // Get the length of the array
+    n = LENGTH(arr)
+    
+    // Iterate through the array starting from the second element
+    FOR i = 1 TO n - 1
+        // Store the current element to be inserted
+        current = arr[i]
+        
+        // Start comparing with elements before the current one
+        j = i - 1
+        
+        // Move elements greater than the current one to the right
+        WHILE j >= 0 AND arr[j] > current
+            arr[j + 1] = arr[j]
+            j = j - 1
+        END_WHILE
+        
+        // Insert the current element into its correct position
+        arr[j + 1] = current
+    END_FOR
+    
+    // Return the sorted array
+    RETURN arr
+END_FUNCTION
